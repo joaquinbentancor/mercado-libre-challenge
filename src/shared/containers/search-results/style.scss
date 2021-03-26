@@ -1,0 +1,15 @@
+@import "../../styles/_variables.scss";
+
+.search-results {
+  width: 100%;
+  display: flex;
+  padding-top: $md-padding;
+  justify-content: center;
+}
+
+.search-results > div {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: $md-padding 0;
+}

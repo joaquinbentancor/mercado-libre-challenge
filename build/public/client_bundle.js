@@ -71,7 +71,18 @@ eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.App = void 0;\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nvar search_bar_1 = __webpack_require__(/*! ../search-bar */ \"./src/shared/components/search-bar/index.tsx\");\n__webpack_require__(/*! ./style.scss */ \"./src/shared/components/app/style.scss\");\nvar App = function () {\n    return react_1.default.createElement(search_bar_1.SearchBar, null);\n};\nexports.App = App;\n\n\n//# sourceURL=webpack://mercado-libre-challenge/./src/shared/components/app/index.tsx?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.App = void 0;\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nvar search_bar_1 = __webpack_require__(/*! ../search-bar */ \"./src/shared/components/search-bar/index.tsx\");\nvar search_results_1 = __webpack_require__(/*! ../../containers/search-results */ \"./src/shared/containers/search-results/index.tsx\");\n__webpack_require__(/*! ./style.scss */ \"./src/shared/components/app/style.scss\");\nvar App = function () {\n    return (react_1.default.createElement(react_1.default.Fragment, null,\n        react_1.default.createElement(search_bar_1.SearchBar, null),\n        react_1.default.createElement(search_results_1.SearchResults, null)));\n};\nexports.App = App;\n\n\n//# sourceURL=webpack://mercado-libre-challenge/./src/shared/components/app/index.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/components/result-box/index.tsx":
+/*!****************************************************!*\
+  !*** ./src/shared/components/result-box/index.tsx ***!
+  \****************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.ResultBox = void 0;\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nvar shipping_png_1 = __importDefault(__webpack_require__(/*! ../../../assets/images/shipping.png */ \"./src/assets/images/shipping.png\"));\n__webpack_require__(/*! ./style.scss */ \"./src/shared/components/result-box/style.scss\");\nvar ResultBox = function () {\n    return (react_1.default.createElement(\"div\", { className: \"result-wrapper\" },\n        react_1.default.createElement(\"div\", { className: \"result-card\" },\n            react_1.default.createElement(\"div\", { className: \"result-image col-2\" },\n                react_1.default.createElement(\"img\", { src: shipping_png_1.default })),\n            react_1.default.createElement(\"div\", { className: \"result-content-wrapper\" },\n                react_1.default.createElement(\"div\", { className: \"result-content-header\" },\n                    react_1.default.createElement(\"div\", { className: \"result-content-price col-1\" },\n                        react_1.default.createElement(\"span\", null, \"$ 2000\")),\n                     true && (react_1.default.createElement(\"div\", { className: \"col-7\" },\n                        react_1.default.createElement(\"img\", { src: shipping_png_1.default }))),\n                    react_1.default.createElement(\"div\", { className: \"result-content-place col-2\" },\n                        react_1.default.createElement(\"span\", null, \"Capital Federal\")),\n                    react_1.default.createElement(\"div\", null)),\n                react_1.default.createElement(\"div\", { className: \"result-content-description\" },\n                    react_1.default.createElement(\"span\", null, \"Test very very very large description.\"))))));\n};\nexports.ResultBox = ResultBox;\n\n\n//# sourceURL=webpack://mercado-libre-challenge/./src/shared/components/result-box/index.tsx?");
 
 /***/ }),
 
@@ -83,6 +94,17 @@ eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {
 
 "use strict";
 eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.SearchBar = void 0;\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nvar search_png_1 = __importDefault(__webpack_require__(/*! ../../../assets/images/search.png */ \"./src/assets/images/search.png\"));\nvar logo_png_1 = __importDefault(__webpack_require__(/*! ../../../assets/images/logo.png */ \"./src/assets/images/logo.png\"));\n__webpack_require__(/*! ./style.scss */ \"./src/shared/components/search-bar/style.scss\");\nvar SearchBar = function () {\n    return (react_1.default.createElement(\"div\", { className: \"nav\" },\n        react_1.default.createElement(\"div\", { className: \"logo-wrapper col-1\" },\n            react_1.default.createElement(\"img\", { src: logo_png_1.default, alt: \"\" })),\n        react_1.default.createElement(\"div\", { className: \"col-9\" },\n            react_1.default.createElement(\"form\", { className: \"form\" },\n                react_1.default.createElement(\"input\", { type: \"text\", className: \"input\", placeholder: \"Nunca dejes de buscar\" }),\n                react_1.default.createElement(\"button\", { className: \"button\" },\n                    react_1.default.createElement(\"img\", { src: search_png_1.default, alt: \"\" }))))));\n};\nexports.SearchBar = SearchBar;\n\n\n//# sourceURL=webpack://mercado-libre-challenge/./src/shared/components/search-bar/index.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/containers/search-results/index.tsx":
+/*!********************************************************!*\
+  !*** ./src/shared/containers/search-results/index.tsx ***!
+  \********************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.SearchResults = void 0;\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nvar result_box_1 = __webpack_require__(/*! ../../components/result-box */ \"./src/shared/components/result-box/index.tsx\");\n__webpack_require__(/*! ./style.scss */ \"./src/shared/containers/search-results/style.scss\");\nvar SearchResults = function () {\n    return (react_1.default.createElement(\"div\", { className: \"search-results\" },\n        react_1.default.createElement(\"div\", { className: \"col-10\" }, [0, 1, 2, 3].map(function (item) { return (react_1.default.createElement(result_box_1.ResultBox, { key: item })); }))));\n};\nexports.SearchResults = SearchResults;\n\n\n//# sourceURL=webpack://mercado-libre-challenge/./src/shared/containers/search-results/index.tsx?");
 
 /***/ }),
 
@@ -105,6 +127,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (\"./1d86c0e4ea35d3c3da1f3bfe51884738.png\");\n\n//# sourceURL=webpack://mercado-libre-challenge/./src/assets/images/search.png?");
+
+/***/ }),
+
+/***/ "./src/assets/images/shipping.png":
+/*!****************************************!*\
+  !*** ./src/assets/images/shipping.png ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (\"./ab6bfe1ed7d9a4614387f1d0980fc37e.png\");\n\n//# sourceURL=webpack://mercado-libre-challenge/./src/assets/images/shipping.png?");
 
 /***/ }),
 
@@ -152,6 +185,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
+/***/ "./src/shared/components/result-box/style.scss":
+/*!*****************************************************!*\
+  !*** ./src/shared/components/result-box/style.scss ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://mercado-libre-challenge/./src/shared/components/result-box/style.scss?");
+
+/***/ }),
+
 /***/ "./src/shared/components/search-bar/style.scss":
 /*!*****************************************************!*\
   !*** ./src/shared/components/search-bar/style.scss ***!
@@ -160,6 +204,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://mercado-libre-challenge/./src/shared/components/search-bar/style.scss?");
+
+/***/ }),
+
+/***/ "./src/shared/containers/search-results/style.scss":
+/*!*********************************************************!*\
+  !*** ./src/shared/containers/search-results/style.scss ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://mercado-libre-challenge/./src/shared/containers/search-results/style.scss?");
 
 /***/ }),
 
