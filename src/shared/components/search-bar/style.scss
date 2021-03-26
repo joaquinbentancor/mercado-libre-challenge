@@ -1,0 +1,50 @@
+@import "../../styles/_variables.scss";
+
+.nav {
+  background-color: $primary-color;
+  height: 66px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  .logo-wrapper {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .form {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+
+    .input {
+      height: 30px;
+      border: none;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+      margin: 12px 0;
+      width: calc(100% - 54px);
+      font-size: 15px;
+      padding: 6px 12px;
+      outline: none;
+    }
+
+    .button {
+      margin: 12px 0px;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      height: 42px;
+      width: 42px;
+      border: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
