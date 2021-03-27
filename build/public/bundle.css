@@ -50,7 +50,7 @@
 .result-wrapper .result-card {
   display: inline-flex;
   flex-direction: row;
-  padding: 16px 0 16px 16px;
+  margin: 16px 0 16px 16px;
   position: relative;
   width: 100%;
 }
@@ -73,10 +73,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 32px;
+  margin: 0 0 32px 0;
 }
 .result-wrapper .result-card .result-content-wrapper .result-content-header .result-content-price {
-  font-size: 24px;
+  font-size: 32px;
 }
 .result-wrapper .result-card .result-content-wrapper .result-content-header .result-content-place {
   width: 100px;
@@ -88,7 +88,7 @@
 .search-results {
   width: 100%;
   display: flex;
-  padding-top: 16px;
+  margin: 16px 0 0 0;
   justify-content: center;
 }
 
@@ -152,5 +152,8 @@ body {
   font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
 }
 body ol {
+  margin: 0;
+}
+body p {
   margin: 0;
 }

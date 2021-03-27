@@ -1,15 +1,15 @@
 @import "../../styles/_variables.scss";
 
-.search-results {
+.item-detail {
   width: 100%;
   display: flex;
-  margin: $md-margin 0 0 0;
+  margin: $md-margin;
   justify-content: center;
 }
 
-.search-results > div {
+.item-detail > div {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  padding: $md-margin 0;
+  margin: $md-margin 0;
 }

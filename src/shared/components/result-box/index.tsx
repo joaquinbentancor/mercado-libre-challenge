@@ -11,11 +11,11 @@ export const ResultBox = () => {
         </div>
         <div className={"result-content-wrapper"}>
           <div className={"result-content-header"}>
-            <div className={"result-content-price col-1"}>
+            <div className={"result-content-price col-2"}>
               <span>$ 2000</span>
             </div>
             {true && (
-              <div className="col-6">
+              <div className="col-5">
                 <img src={shipping}></img>
               </div>
             )}

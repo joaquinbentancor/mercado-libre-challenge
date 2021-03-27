@@ -1,0 +1,58 @@
+@import "../../styles/_variables.scss";
+
+.result-wrapper {
+  display: flex;
+  background-color: #fff;
+
+  .result-card {
+    margin: $lg-padding;
+
+    .result-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 480px;
+      }
+    }
+
+    .item-condition-wrapper {
+      font-size: $md-font-size;
+    }
+
+    .item-title-wrapper {
+      margin: $md-padding 0 0 0;
+      font-size: $xlg-font-size;
+    }
+
+    .item-price-wrapper {
+      margin: $lg-padding 0 0 0;
+      font-size: 42px;
+    }
+
+    .buy-button-wrapper {
+      margin: $lg-padding 0 0 0;
+      .buy-button {
+        background: $button-color;
+        border: none;
+        color: white;
+        padding: 8px;
+        width: 100%;
+        border-radius: 4px;
+      }
+    }
+
+    .item-description-wrapper {
+      margin:  $lg-padding 0 0 0;
+      .item-description-title {
+        font-size: 32px;
+      }
+
+      .item-description-content {
+        margin: $lg-padding 0 0 0;
+        font-size: 16px;
+      }
+    }
+  }
+}
