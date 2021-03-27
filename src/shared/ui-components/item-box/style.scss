@@ -1,0 +1,59 @@
+@import "../../styles/_variables.scss";
+
+.result-wrapper {
+  display: flex;
+  background-color: #fff;
+  flex-grow: 1;
+  border-bottom: thin solid $light-color;
+  list-style: none;
+
+  .result-card {
+    display: inline-flex;
+    flex-direction: row;
+    padding: $md-padding 0 $md-padding $md-padding;
+    position: relative;
+    width: 100%;
+
+    .result-image {
+      border-radius: $border-radius;
+      box-sizing: content-box;
+      flex-shrink: 0;
+      margin: 0 $md-padding 0 0;
+
+      img {
+        width: 180px;
+        height: 180px;
+      }
+    }
+
+    .result-content-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .result-content-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: $lg-padding;
+
+        .result-content-price {
+          font-size: $xlg-font-size;
+
+          span {
+            padding-right: 10px;
+          }
+        }
+
+        .result-content-place {
+          width: 100px;
+          font-size: $xs-font-size;
+        }
+      }
+
+      .result-content-title {
+        font-size: $md-font-size;
+      }
+    }
+  }
+}

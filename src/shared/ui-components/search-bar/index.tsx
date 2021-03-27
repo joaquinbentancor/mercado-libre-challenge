@@ -21,7 +21,7 @@ export const SearchBar = ({ onSearch }: SearchBarProps) => {
   return (
     <div className="nav">
       <div className="logo-wrapper col-1">
-        <img src={logo} alt="" />
+        <img src={logo} />
       </div>
       <div className="col-9">
         <form className="form" onSubmit={onSubmitForm}>
