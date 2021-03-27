@@ -1,7 +1,7 @@
 import React from "react";
-import { SearchBar } from "../search-bar";
 import { Route, Switch } from "react-router-dom";
 import { routes } from "../../routes";
+import  SearchBar  from "../search-bar";
 import "./style.scss";
 
 export const App = () => {

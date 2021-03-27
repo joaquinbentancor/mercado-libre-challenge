@@ -1,5 +1,5 @@
 import { ParsedQs } from "qs";
-import { App } from "../components/app";
+import { App } from "../containers/app";
 import SearchResults from "../containers/search-results";
 import { search } from "../services/items";
 

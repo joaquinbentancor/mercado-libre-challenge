@@ -5,9 +5,10 @@ import "./style.scss";
 
 interface ItemBoxProps {
   item: Item;
+  onClickItem: (itemId: string) => void;
 }
 
-export const ItemBox = ({ item }: ItemBoxProps) => {
+export const ItemBox = ({ item, onClickItem }: ItemBoxProps) => {
   return (
     <div className="result-wrapper">
       <div className="result-card">
@@ -17,16 +18,17 @@ export const ItemBox = ({ item }: ItemBoxProps) => {
         <div className="result-content-wrapper">
           <div className="result-content-header">
             <div className="result-content-price col-6">
-              <span>{item.price?.currency} {item.price?.amount}</span>
+              <span>
+                {item.price?.currency} {item.price?.amount}
+              </span>
               {item.free_shipping && <img src={shipping}></img>}
             </div>
             <div className="result-content-place col-3">
               <span>{item.address}</span>
             </div>
-            <div></div>
           </div>
           <div className="result-content-title">
-            <span>{item.title}</span>
+            <span onClick={() => onClickItem(item.id)}>{item.title}</span>
           </div>
         </div>
       </div>
