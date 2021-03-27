@@ -78,11 +78,14 @@
 .result-wrapper .result-card .result-content-wrapper .result-content-header .result-content-price {
   font-size: 24px;
 }
+.result-wrapper .result-card .result-content-wrapper .result-content-header .result-content-price span {
+  padding-right: 10px;
+}
 .result-wrapper .result-card .result-content-wrapper .result-content-header .result-content-place {
   width: 100px;
   font-size: 12px;
 }
-.result-wrapper .result-card .result-content-wrapper .result-content-description {
+.result-wrapper .result-card .result-content-wrapper .result-content-title {
   font-size: 14px;
 }
 .search-results {
