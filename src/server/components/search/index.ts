@@ -1,43 +1,38 @@
-import axios from "axios";
+import { MercadoLibreAPI } from "../../external-services";
 import author from "../../helpers/author";
-import { MELI_API } from "../../constants";
 
 export const getItems = async (query: string) => {
-  const result = await fetchItems(query);
+  const result: any = await MercadoLibreAPI.fetchItems(query);
 
-  const fullInformationItems = result.data?.results
+  const fullInformationItems = result.results
     .slice(0, 4)
     .map(async (result) => {
       const [currency] = await getItemSubResources({
         currencyId: result.currency_id,
       });
 
-      return mapItem({ item: result, currency: currency.data });
+      return mapItem({ item: result, currency });
     });
 
   const items = await Promise.all(fullInformationItems);
-  const maxCategory = await getMaxCategory(result.data?.filters);
+  const maxCategory = await getMaxCategory(result.filters);
 
   return { author, items, categories: maxCategory && mapCategory(maxCategory) };
 };
 
 export const getItem = async (itemId: string) => {
-  const result = await fetchItem(itemId);
+  const item: any = await MercadoLibreAPI.fetchItem(itemId);
 
   const [currency, category, description] = await getItemSubResources({
-    currencyId: result.data?.currency_id,
-    categoryId: result.data?.category_id,
+    currencyId: item.currency_id,
+    categoryId: item.category_id,
     itemId,
   });
 
   return {
     author,
-    item: mapItem({
-      item: result.data,
-      description: description.data,
-      currency: currency.data,
-    }),
-    categories: mapCategory(category.data),
+    item: mapItem({ item, description, currency }),
+    categories: mapCategory(category),
   };
 };
 
@@ -87,9 +82,9 @@ const getItemSubResources = ({
 }) => {
   const subResources = [];
 
-  currencyId && subResources.push(fetchCurrency(currencyId));
-  categoryId && subResources.push(fetchCategory(categoryId));
-  itemId && subResources.push(fetchItemDescription(itemId));
+  currencyId && subResources.push(MercadoLibreAPI.fetchCurrency(currencyId));
+  categoryId && subResources.push(MercadoLibreAPI.fetchCategory(categoryId));
+  itemId && subResources.push(MercadoLibreAPI.fetchItemDescription(itemId));
 
   return Promise.all(subResources);
 };
@@ -106,7 +101,7 @@ const getMaxCategory = async (filters) => {
 
   const allCategories = await Promise.all(
     categoryFilter.values?.reduce((acc, category) => {
-      acc.push(fetchCategory(category.id));
+      acc.push(MercadoLibreAPI.fetchCategory(category.id));
       return acc;
     }, [])
   );
@@ -120,25 +115,5 @@ const getMaxCategory = async (filters) => {
     return max;
   }, allCategories[0]);
 
-  return maxCategory.data;
-};
-
-const fetchItems = (query) => {
-  return axios.get(`${MELI_API}/sites/MLA/search?${query}`);
-};
-
-const fetchItem = (itemId: string) => {
-  return axios.get(`${MELI_API}/items/${itemId}`);
-};
-
-const fetchItemDescription = (itemId: string) => {
-  return axios.get(`${MELI_API}/items/${itemId}/description`);
-};
-
-const fetchCurrency = (currencyId: string) => {
-  return axios.get(`${MELI_API}/currencies/${currencyId}`);
-};
-
-const fetchCategory = (categoryId: string) => {
-  return axios.get(`${MELI_API}/categories/${categoryId}`);
+  return maxCategory;
 };

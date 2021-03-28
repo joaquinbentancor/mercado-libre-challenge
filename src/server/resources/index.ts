@@ -1,6 +1,6 @@
 import express from "express";
 import querystring from "querystring";
-import { getItems, getItem } from "../services/search";
+import { getItems, getItem } from "../components/search";
 
 const router = express.Router();
 
