@@ -22,6 +22,7 @@ export interface Item {
   free_shipping: boolean;
   address: string
   description: string;
+  sold_quantity: number;
 }
 
 export interface ItemsResult {

@@ -1,6 +1,7 @@
 import React from "react";
 import { useServerSideData } from "../../hooks/use-server-side-data";
 import { ItemResult } from "../../interfaces";
+import { Breadcrumb } from "../../ui-components/breadcrumb";
 import { ItemDetail } from "../../ui-components/item-detail";
 import "./style.scss";
 
@@ -10,8 +11,9 @@ export default () => {
 
   return (
     <div className="item-detail">
-      <div className="col-10">
-        {itemResult.item && <ItemDetail item={itemResult.item}/> }
+      <Breadcrumb tags={itemResult.categories} />
+      <div className="item-detail-wrapper">
+        {itemResult.item && <ItemDetail item={itemResult.item} />}
       </div>
     </div>
   );

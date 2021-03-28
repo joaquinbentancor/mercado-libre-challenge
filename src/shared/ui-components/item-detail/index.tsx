@@ -16,7 +16,7 @@ export const ItemDetail = ({ item }: ItemDetailProps) => {
           </div>
           <div className="col-5">
             <div className="item-condition-wrapper">
-              <span>{item.condition} - 24 vendidos</span>
+              <span>{item.condition} - {item.sold_quantity} vendidos</span>
             </div>
             <div className="item-title-wrapper">
               <span>{item.title}</span>

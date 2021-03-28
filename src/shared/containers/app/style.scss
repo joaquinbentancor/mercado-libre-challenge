@@ -3,12 +3,13 @@
 
 body {
   margin: 0;
-  background-color: $light-color;
+  background-color: $ultra-light-color;
   font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto,
     Arial, sans-serif;
 
-  ol {
+   ul {
     margin: 0;
+    padding: 0;
   }
 
   p {

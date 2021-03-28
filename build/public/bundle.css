@@ -2,7 +2,7 @@
   display: flex;
   background-color: #fff;
   flex-grow: 1;
-  border-bottom: thin solid #eee;
+  border-bottom: thin solid #EEEEEE;
   list-style: none;
 }
 .box-wrapper .box-card {
@@ -46,18 +46,25 @@
 .box-wrapper .box-card .result-content-wrapper .result-content-title {
   font-size: 14px;
 }
+.breadcrumb .breadcrumb-list {
+  list-style: none;
+  color: #999999;
+}
+.breadcrumb .breadcrumb-list .breadcrumb-item {
+  display: inline;
+  font-size: 14px;
+}
+.breadcrumb .breadcrumb-list li + li:before {
+  padding: 8px;
+  content: ">";
+}
 .search-results {
   width: 100%;
   display: flex;
-  margin: 16px 0 0 0;
-  justify-content: center;
-}
-
-.search-results > div {
-  display: inline-flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 16px 0;
+}
+.search-results .search-results-wrapper {
+  margin: 16px 0 0 0;
 }
 .detail-wrapper {
   display: flex;
@@ -109,17 +116,18 @@
 .item-detail {
   width: 100%;
   display: flex;
-  justify-content: center;
-}
-
-.item-detail > div {
-  display: inline-flex;
   flex-direction: column;
+}
+.item-detail .item-detail-wrapper {
+  margin: 16px 0 0 0;
+}
+.layout {
+  display: flex;
   justify-content: center;
-  margin: 16px 0;
+  margin: 16px 0 16px 0;
 }
 .nav {
-  background-color: #ffe600;
+  background-color: #FFE600;
   height: 66px;
   display: flex;
   width: 100%;
@@ -213,11 +221,12 @@
 
 body {
   margin: 0;
-  background-color: #eee;
+  background-color: #EEEEEE;
   font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
 }
-body ol {
+body ul {
   margin: 0;
+  padding: 0;
 }
 body p {
   margin: 0;

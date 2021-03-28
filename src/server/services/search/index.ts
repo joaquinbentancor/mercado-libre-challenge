@@ -16,9 +16,9 @@ export const getItems = async (query: string) => {
     });
 
   const items = await Promise.all(fullInformationItems);
-  const maxCategory = getMaxCategory(result.data?.available_filters);
+  const maxCategory = await getMaxCategory(result.data?.filters);
 
-  return { author, items, categories: maxCategory && [maxCategory.value] };
+  return { author, items, categories: maxCategory && mapCategory(maxCategory) };
 };
 
 export const getItem = async (itemId: string) => {
@@ -36,17 +36,12 @@ export const getItem = async (itemId: string) => {
       item: result.data,
       description: description.data,
       currency: currency.data,
-      category: category.data,
     }),
+    categories: mapCategory(category.data),
   };
 };
 
-const mapItem = ({
-  item,
-  category = null,
-  description = null,
-  currency = null,
-}) => {
+const mapItem = ({ item, description = null, currency = null }) => {
   let mappedItem;
 
   if (item) {
@@ -73,13 +68,6 @@ const mapItem = ({
     };
   }
 
-  if (category) {
-    mappedItem = {
-      ...mappedItem,
-      categories: category.path_from_root?.map((c) => c.name),
-    };
-  }
-
   if (description) {
     mappedItem = {
       ...mappedItem,
@@ -90,6 +78,8 @@ const mapItem = ({
   return mappedItem;
 };
 
+const mapCategory = (category) => category.path_from_root?.map((c) => c.name);
+
 const getItemSubResources = ({
   currencyId = null,
   categoryId = null,
@@ -97,40 +87,40 @@ const getItemSubResources = ({
 }) => {
   const subResources = [];
 
-  if (currencyId) {
-    subResources.push(fetchCurrency(currencyId));
-  }
-
-  if (categoryId) {
-    subResources.push(fetchCategory(categoryId));
-  }
-
-  if (itemId) {
-    subResources.push(fetchItemDescription(itemId));
-  }
+  currencyId && subResources.push(fetchCurrency(currencyId));
+  categoryId && subResources.push(fetchCategory(categoryId));
+  itemId && subResources.push(fetchItemDescription(itemId));
 
   return Promise.all(subResources);
 };
 
-const getMaxCategory = (filters) => {
+const getMaxCategory = async (filters) => {
   if (!Array.isArray(filters)) {
     return null;
   }
 
   const categoryFilter = filters.find((f) => f.id == "category");
-
   if (!categoryFilter || categoryFilter.length === 0) {
     return null;
   }
 
-  const maxCategory = categoryFilter.values.reduce((max, f) => {
-    if (f.results > max.results) {
-      return f;
+  const allCategories = await Promise.all(
+    categoryFilter.values?.reduce((acc, category) => {
+      acc.push(fetchCategory(category.id));
+      return acc;
+    }, [])
+  );
+
+  const maxCategory: any = allCategories.reduce((max: any, category: any) => {
+    if (
+      category.total_items_in_this_category > max.total_items_in_this_category
+    ) {
+      return category;
     }
     return max;
-  }, categoryFilter.values[0]);
+  }, allCategories[0]);
 
-  return maxCategory;
+  return maxCategory.data;
 };
 
 const fetchItems = (query) => {

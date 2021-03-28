@@ -1,0 +1,7 @@
+@import "../../styles/_variables.scss";
+
+.layout {
+    display: flex;
+    justify-content: center;
+    margin: $md-margin 0 $md-margin 0;
+}

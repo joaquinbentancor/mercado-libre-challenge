@@ -3,13 +3,9 @@
 .search-results {
   width: 100%;
   display: flex;
-  margin: $md-margin 0 0 0;
-  justify-content: center;
-}
-
-.search-results > div {
-  display: inline-flex;
   flex-direction: column;
-  justify-content: center;
-  padding: $md-margin 0;
+
+  .search-results-wrapper {
+    margin: $md-margin 0 0 0;
+  }
 }

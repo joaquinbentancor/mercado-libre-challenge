@@ -3,12 +3,10 @@
 .item-detail {
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  
+  .item-detail-wrapper {
+    margin: $md-margin 0 0 0;
+  }
 }
 
-.item-detail > div {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: $md-margin 0;
-}

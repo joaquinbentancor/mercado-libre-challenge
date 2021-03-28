@@ -1,0 +1,18 @@
+@import "../../styles/_variables.scss";
+
+.breadcrumb {
+  .breadcrumb-list {
+    list-style: none;
+    color: $light-color;
+
+    .breadcrumb-item {
+      display: inline;
+      font-size: 14px;
+    }
+
+    li + li:before {
+      padding: 8px;
+      content: ">";
+    }
+  }
+}
