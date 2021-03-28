@@ -13,8 +13,8 @@ router.get("/api/items", async (req, res) => {
   res.json({ ...searchResults });
 });
 
-router.get("/api/item", async (req, res) => {
-  const item = await getItem();
+router.get("/api/items/:id", async (req, res) => {
+  const item = await getItem(req.params.id);
   res.json({ ...item });
 });
 

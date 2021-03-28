@@ -18,7 +18,7 @@ app.get("*", async (req, res) => {
   const activeRoute = routes.find((route) => matchPath(req.path, route));
 
   const data = await (activeRoute?.fetchInitialData
-    ? activeRoute.fetchInitialData(req.query)
+    ? activeRoute.fetchInitialData({ query: req.query, path: req.path })
     : Promise.resolve(req.path));
 
   const markup = renderToString(

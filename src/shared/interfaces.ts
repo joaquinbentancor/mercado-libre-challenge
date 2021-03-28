@@ -28,3 +28,8 @@ export interface ItemsResult {
   categories: string[];
   items: Item[];
 }
+
+export interface ItemResult {
+  categories: string[];
+  item: Item;
+}

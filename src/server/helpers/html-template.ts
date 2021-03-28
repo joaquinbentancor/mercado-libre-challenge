@@ -1,8 +1,8 @@
 import serialize from "serialize-javascript";
 
 export default (injectableComponent, injectableData) => {
-  const clientBundleScript = `<script src="client_bundle.js"></script>`;
-  const clientBundleStyle = `<link rel="stylesheet" href="bundle.css">`;
+  const clientBundleScript = `<script src="/client_bundle.js"></script>`;
+  const clientBundleStyle = `<link rel="stylesheet" href="/bundle.css">`;
 
   return `
     <!DOCTYPE html>

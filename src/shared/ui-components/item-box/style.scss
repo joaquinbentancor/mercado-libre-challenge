@@ -1,24 +1,26 @@
 @import "../../styles/_variables.scss";
 
-.result-wrapper {
+.box-wrapper {
   display: flex;
   background-color: #fff;
   flex-grow: 1;
   border-bottom: thin solid $light-color;
   list-style: none;
 
-  .result-card {
+  .box-card {
     display: inline-flex;
     flex-direction: row;
-    padding: $md-padding 0 $md-padding $md-padding;
+    margin: $md-margin 0 $md-margin $md-margin;
     position: relative;
     width: 100%;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     .result-image {
       border-radius: $border-radius;
-      box-sizing: content-box;
-      flex-shrink: 0;
-      margin: 0 $md-padding 0 0;
+      margin: 0 $md-margin 0 0;
 
       img {
         width: 180px;
@@ -34,8 +36,7 @@
       .result-content-header {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding-bottom: $lg-padding;
+        margin: 0 0 $lg-margin 0;
 
         .result-content-price {
           font-size: $xlg-font-size;

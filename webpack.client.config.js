@@ -21,7 +21,7 @@ const config = {
         use: [
           {
             loader: "file-loader",
-            options: { publicPath: "." },
+           options: { publicPath: "/" },
           },
         ],
       },

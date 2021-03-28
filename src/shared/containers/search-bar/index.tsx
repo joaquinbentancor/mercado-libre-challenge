@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router";
-import { SearchBar } from "../../components/search-bar";
+import { SearchBar } from "../../ui-components/search-bar";
 
 export default () => {
   let history = useHistory();

@@ -21,22 +21,22 @@ export const getItems = async (query: string) => {
   return { author, items, categories: maxCategory && [maxCategory.value] };
 };
 
-export const getItem = async () => {
-  const result = await fetchItem("MLA910569108");
+export const getItem = async (itemId: string) => {
+  const result = await fetchItem(itemId);
 
   const [currency, category, description] = await getItemSubResources({
     currencyId: result.data?.currency_id,
     categoryId: result.data?.category_id,
-    itemId: "MLA910569108",
+    itemId,
   });
 
   return {
     author,
     item: mapItem({
       item: result.data,
-      description,
-      currency,
-      category,
+      description: description.data,
+      currency: currency.data,
+      category: category.data,
     }),
   };
 };
@@ -47,7 +47,7 @@ const mapItem = ({
   description = null,
   currency = null,
 }) => {
-  let mappedItem = null;
+  let mappedItem;
 
   if (item) {
     mappedItem = {
@@ -76,14 +76,14 @@ const mapItem = ({
   if (category) {
     mappedItem = {
       ...mappedItem,
-      categories: category.path_from_root.map((c) => c.name),
+      categories: category.path_from_root?.map((c) => c.name),
     };
   }
 
   if (description) {
     mappedItem = {
       ...mappedItem,
-      description: description.text,
+      description: description.plain_text,
     };
   }
 
@@ -152,5 +152,3 @@ const fetchCurrency = (currencyId: string) => {
 const fetchCategory = (categoryId: string) => {
   return axios.get(`${MELI_API}/categories/${categoryId}`);
 };
-
-

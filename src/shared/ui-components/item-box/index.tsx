@@ -10,25 +10,25 @@ interface ItemBoxProps {
 
 export const ItemBox = ({ item, onClickItem }: ItemBoxProps) => {
   return (
-    <div className="result-wrapper">
-      <div className="result-card">
-        <div className="result-image col-3">
-          <img src={item.picture}></img>
+    <div className="box-wrapper">
+      <div className="box-card" onClick={() => onClickItem(item.id)}>
+        <div className="result-image">
+          <img src={item.picture} />
         </div>
         <div className="result-content-wrapper">
           <div className="result-content-header">
-            <div className="result-content-price col-6">
+            <div className="result-content-price col-9">
               <span>
                 {item.price?.currency} {item.price?.amount}
               </span>
-              {item.free_shipping && <img src={shipping}></img>}
+              {item.free_shipping && <img src={shipping} />}
             </div>
             <div className="result-content-place col-3">
               <span>{item.address}</span>
             </div>
           </div>
           <div className="result-content-title">
-            <span onClick={() => onClickItem(item.id)}>{item.title}</span>
+            <span >{item.title}</span>
           </div>
         </div>
       </div>

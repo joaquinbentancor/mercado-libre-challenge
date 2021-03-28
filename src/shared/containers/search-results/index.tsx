@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router";
-import { ItemBox } from "../../components/item-box";
+import { ItemBox } from "../../ui-components/item-box";
 import { useServerSideData } from "../../hooks/use-server-side-data";
 import { ItemsResult } from "../../interfaces";
 import "./style.scss";
