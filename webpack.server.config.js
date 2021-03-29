@@ -24,7 +24,7 @@ let config = {
             loader: "file-loader",
             options: {
               publicPath: "/",
-              emitFile: false
+              emitFile: false,
             },
           },
         ],

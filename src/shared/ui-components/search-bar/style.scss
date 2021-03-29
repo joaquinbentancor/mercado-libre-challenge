@@ -12,6 +12,10 @@
 
   .logo-wrapper {
     @include ml-width(1);
+    @media only screen and (max-width: 768px) {
+      @include ml-width(2);
+    }
+
     padding: 20px 0;
     display: flex;
     align-items: center;
@@ -19,6 +23,10 @@
 
   .form-wrapper {
     @include ml-width(9);
+    @media only screen and (max-width: 768px) {
+      @include ml-width(8);
+    }
+
     .form {
       height: 100%;
       width: 100%;

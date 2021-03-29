@@ -10,17 +10,26 @@
 
     .result-image {
       @include ml-width(7);
+      @media only screen and (max-width: 768px) {
+        @include ml-width(5);
+      }
       display: flex;
       justify-content: center;
       align-items: center;
 
       img {
         width: 480px;
+        @media only screen and (max-width: 768px) {
+          width: 280px;
+        }
       }
     }
 
     .item-condition-resume {
       @include ml-width(5);
+      @media only screen and (max-width: 768px) {
+        @include ml-width(6);
+      }
 
       .item-condition-wrapper {
         font-size: 14px;
@@ -57,6 +66,10 @@
 
       .item-description-content {
         @include ml-width(7);
+        @media only screen and (max-width: 768px) {
+          width: 100%;
+        }
+
         margin: $lg-margin 0 0 0;
         font-size: 16px;
       }

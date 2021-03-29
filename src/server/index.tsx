@@ -6,10 +6,9 @@ import resources from "./resources";
 import App from "../shared/containers/app";
 import { routes } from "../shared/routes";
 import htmlTemplate from "./helpers/html-template";
-import config from "../../config";
 
 const app = express();
-const port = config.port || 3000;
+const port = 3000;
 
 app.use(express.static("build/public"));
 app.use(express.json());
