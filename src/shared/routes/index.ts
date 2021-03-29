@@ -1,4 +1,3 @@
-import { App } from "../containers/app";
 import SearchResults from "../containers/search-results";
 import ItemDetail from "../containers/item-detail";
 import { getItem, search } from "../services/items";
@@ -11,11 +10,6 @@ interface Route {
 }
 
 export const routes: Route[] = [
-  {
-    path: "/",
-    component: App,
-    exact: true,
-  },
   {
     path: "/items",
     component: SearchResults,

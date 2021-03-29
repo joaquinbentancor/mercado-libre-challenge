@@ -3,7 +3,7 @@ import { renderToString } from "react-dom/server";
 import { matchPath, StaticRouter } from "react-router-dom";
 import express from "express";
 import resources from "./resources";
-import { App } from "../shared/containers/app";
+import App from "../shared/containers/app";
 import { routes } from "../shared/routes";
 import htmlTemplate from "./helpers/html-template";
 import config from "../../config";

@@ -5,7 +5,7 @@ import { Layout } from "../../ui-components/layout";
 import SearchBar from "../search-bar";
 import "./style.scss";
 
-export const App = () => {
+export default () => {
   return (
     <>
       <SearchBar />

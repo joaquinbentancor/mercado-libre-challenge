@@ -1,0 +1,440 @@
+.col-1 {
+  width: 8.33%;
+}
+
+.col-2 {
+  width: 16.66%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+.col-5 {
+  width: 41.66%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33%;
+}
+
+.col-8 {
+  width: 66.66%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33%;
+}
+
+.col-11 {
+  width: 91.66%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.box-wrapper {
+  display: flex;
+  background-color: #fff;
+  flex-grow: 1;
+  border-bottom: thin solid #EEEEEE;
+  list-style: none;
+}
+.box-wrapper .box-card {
+  display: inline-flex;
+  flex-direction: row;
+  margin: 16px 0 16px 16px;
+  width: 100%;
+}
+.box-wrapper .box-card:hover {
+  cursor: pointer;
+}
+.box-wrapper .box-card .result-image {
+  border-radius: 4px;
+  margin: 0 16px 0 0;
+}
+.box-wrapper .box-card .result-image img {
+  width: 180px;
+  height: 180px;
+}
+.box-wrapper .box-card .result-content-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.box-wrapper .box-card .result-content-wrapper .result-content-header {
+  display: flex;
+  align-items: center;
+  margin: 0 0 32px 0;
+}
+.box-wrapper .box-card .result-content-wrapper .result-content-header .result-content-price {
+  width: 74.97%;
+  font-size: 24px;
+}
+.box-wrapper .box-card .result-content-wrapper .result-content-header .result-content-price span {
+  padding-right: 10px;
+}
+.box-wrapper .box-card .result-content-wrapper .result-content-header .result-content-place {
+  width: 24.99%;
+  width: 100px;
+  font-size: 12px;
+}
+.box-wrapper .box-card .result-content-wrapper .result-content-title {
+  font-size: 18px;
+}
+.breadcrumb .breadcrumb-list {
+  list-style: none;
+  color: #999999;
+}
+.breadcrumb .breadcrumb-list .breadcrumb-item {
+  display: inline;
+  font-size: 14px;
+}
+.breadcrumb .breadcrumb-list li + li:before {
+  padding: 8px;
+  content: ">";
+}
+.search-results {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.search-results .search-results-wrapper {
+  margin: 16px 0 0 0;
+}
+.col-1 {
+  width: 8.33%;
+}
+
+.col-2 {
+  width: 16.66%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+.col-5 {
+  width: 41.66%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33%;
+}
+
+.col-8 {
+  width: 66.66%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33%;
+}
+
+.col-11 {
+  width: 91.66%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.detail-wrapper {
+  display: flex;
+  background-color: #fff;
+}
+.detail-wrapper .detail-card {
+  margin: 32px;
+}
+.detail-wrapper .detail-card .result-image {
+  width: 58.31%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.detail-wrapper .detail-card .result-image img {
+  width: 480px;
+}
+.detail-wrapper .detail-card .item-condition-resume {
+  width: 41.65%;
+}
+.detail-wrapper .detail-card .item-condition-resume .item-condition-wrapper {
+  font-size: 14px;
+}
+.detail-wrapper .detail-card .item-condition-resume .item-title-wrapper {
+  margin: 16px 0 0 0;
+  font-size: 24px;
+}
+.detail-wrapper .detail-card .item-condition-resume .item-price-wrapper {
+  margin: 32px 0 0 0;
+  font-size: 46px;
+}
+.detail-wrapper .detail-card .item-condition-resume .buy-button-wrapper {
+  margin: 32px 0 0 0;
+}
+.detail-wrapper .detail-card .item-condition-resume .buy-button-wrapper .buy-button {
+  background: #3483FA;
+  border: none;
+  color: white;
+  padding: 8px;
+  width: 100%;
+  border-radius: 4px;
+}
+.detail-wrapper .detail-card .item-description-wrapper {
+  margin: 32px 0 0 0;
+}
+.detail-wrapper .detail-card .item-description-wrapper .item-description-title {
+  font-size: 32px;
+}
+.detail-wrapper .detail-card .item-description-wrapper .item-description-content {
+  width: 58.31%;
+  margin: 32px 0 0 0;
+  font-size: 16px;
+}
+.item-detail {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.item-detail .item-detail-wrapper {
+  margin: 16px 0 0 0;
+}
+.col-1 {
+  width: 8.33%;
+}
+
+.col-2 {
+  width: 16.66%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+.col-5 {
+  width: 41.66%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33%;
+}
+
+.col-8 {
+  width: 66.66%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33%;
+}
+
+.col-11 {
+  width: 91.66%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.layout {
+  display: flex;
+  justify-content: center;
+  margin: 82px 0 16px 0;
+}
+.layout .layout-children-wrapper {
+  width: 83.3%;
+}
+.col-1 {
+  width: 8.33%;
+}
+
+.col-2 {
+  width: 16.66%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+.col-5 {
+  width: 41.66%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33%;
+}
+
+.col-8 {
+  width: 66.66%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33%;
+}
+
+.col-11 {
+  width: 91.66%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.nav {
+  background-color: #FFE600;
+  height: 66px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+}
+.nav .logo-wrapper {
+  width: 8.33%;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+}
+.nav .form-wrapper {
+  width: 74.97%;
+}
+.nav .form-wrapper .form {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.nav .form-wrapper .form .input {
+  height: 30px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  margin: 12px 0;
+  width: calc(100% - 54px);
+  font-size: 15px;
+  padding: 6px 12px;
+  outline: none;
+}
+.nav .form-wrapper .form .search-button {
+  margin: 12px 0px;
+  border-radius: 0 4px 4px 0;
+  height: 42px;
+  width: 42px;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav .form-wrapper .form .search-button:hover {
+  cursor: pointer;
+}
+.col-1 {
+  width: 8.33%;
+}
+
+.col-2 {
+  width: 16.66%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+.col-5 {
+  width: 41.66%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33%;
+}
+
+.col-8 {
+  width: 66.66%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33%;
+}
+
+.col-11 {
+  width: 91.66%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #EEEEEE;
+  font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+}
+body ul {
+  margin: 0;
+  padding: 0;
+}
+body p {
+  margin: 0;
+}

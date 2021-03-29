@@ -1,0 +1,11 @@
+version: "3"
+services:
+  ssr_app:
+    container_name: mercado_libre_app
+    build:
+      context: ./
+      dockerfile: dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/usr/src/app

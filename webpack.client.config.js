@@ -1,7 +1,7 @@
 const path = require("path");
 const { merge } = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const sharedConfig = require("./webpack.shared.config.js");
 
 const config = {
@@ -32,9 +32,7 @@ const config = {
     new MiniCssExtractPlugin({
       filename: "bundle.css",
     }),
-    new HtmlWebpackPlugin({
-      favicon: "./src/assets/images/favicon.ico"
-  })
+    new FaviconsWebpackPlugin('src/assets/images/favicon.ico')
   ],
 };
 

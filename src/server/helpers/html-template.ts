@@ -8,17 +8,17 @@ export default (injectableComponent, injectableData) => {
     <!DOCTYPE html>
     <html lang="en">
         <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Mercado Libre</title>
-            ${clientBundleStyle}
-            <script>window.__INITIAL_DATA__ = ${serialize(
-              injectableData
-            )}</script>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Mercado Libre</title>
+          ${clientBundleStyle}
+          <script>window.__INITIAL_DATA__ = ${serialize(
+            injectableData
+          )}</script>
         </head>
         <body>
-            <div id="root">${injectableComponent}</div>
-            ${clientBundleScript}
+          <div id="root">${injectableComponent}</div>      
+          ${clientBundleScript}
         </body>
     </html>
     `;
