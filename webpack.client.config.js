@@ -5,7 +5,7 @@ const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const sharedConfig = require("./webpack.shared.config.js");
 
 const config = {
-  target: "node",
+  target: "web",
   entry: "./src/client/index.tsx",
   output: {
     filename: "client_bundle.js",
