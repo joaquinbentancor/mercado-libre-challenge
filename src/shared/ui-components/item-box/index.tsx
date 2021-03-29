@@ -17,13 +17,13 @@ export const ItemBox = ({ item, onClickItem }: ItemBoxProps) => {
         </div>
         <div className="result-content-wrapper">
           <div className="result-content-header">
-            <div className="result-content-price col-9">
+            <div className="result-content-price">
               <span>
                 {item.price?.currency} {item.price?.amount}
               </span>
               {item.free_shipping && <img src={shipping} />}
             </div>
-            <div className="result-content-place col-3">
+            <div className="result-content-place">
               <span>{item.address}</span>
             </div>
           </div>

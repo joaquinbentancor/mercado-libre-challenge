@@ -1,4 +1,5 @@
 @import "../../styles/_variables.scss";
+@import "../../styles/_grid.scss";
 
 .detail-wrapper {
   display: flex;
@@ -8,6 +9,7 @@
     margin: $lg-margin;
 
     .result-image {
+      @include ml-width(7);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -17,39 +19,44 @@
       }
     }
 
-    .item-condition-wrapper {
-      font-size: $md-font-size;
-    }
+    .item-condition-resume {
+      @include ml-width(5);
 
-    .item-title-wrapper {
-      margin: $md-margin 0 0 0;
-      font-size: $xlg-font-size;
-    }
+      .item-condition-wrapper {
+        font-size: 14px;
+      }
 
-    .item-price-wrapper {
-      margin: $lg-margin 0 0 0;
-      font-size: 42px;
-    }
+      .item-title-wrapper {
+        margin: $md-margin 0 0 0;
+        font-size: 24px;
+      }
 
-    .buy-button-wrapper {
-      margin: $lg-margin 0 0 0;
-      .buy-button {
-        background: $button-color;
-        border: none;
-        color: white;
-        padding: 8px;
-        width: 100%;
-        border-radius: 4px;
+      .item-price-wrapper {
+        margin: $lg-margin 0 0 0;
+        font-size: 46px;
+      }
+
+      .buy-button-wrapper {
+        margin: $lg-margin 0 0 0;
+        .buy-button {
+          background: $button-color;
+          border: none;
+          color: white;
+          padding: 8px;
+          width: 100%;
+          border-radius: 4px;
+        }
       }
     }
 
     .item-description-wrapper {
-      margin:  $lg-margin 0 0 0;
+      margin: $lg-margin 0 0 0;
       .item-description-title {
         font-size: 32px;
       }
 
       .item-description-content {
+        @include ml-width(7);
         margin: $lg-margin 0 0 0;
         font-size: 16px;
       }

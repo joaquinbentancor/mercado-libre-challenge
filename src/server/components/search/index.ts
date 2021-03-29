@@ -17,7 +17,7 @@ export const getItems = async (query: string) => {
   const items = await Promise.all(fullInformationItems);
   const maxCategory = await getMaxCategory(result.filters);
 
-  return { author, items, categories: maxCategory && mapCategory(maxCategory) };
+  return { author, items, categories: mapCategory(maxCategory) };
 };
 
 export const getItem = async (itemId: string) => {
@@ -73,7 +73,7 @@ const mapItem = ({ item, description = null, currency = null }) => {
   return mappedItem;
 };
 
-const mapCategory = (category) => category.path_from_root?.map((c) => c.name);
+const mapCategory = (category) => category?.path_from_root?.map((c) => c.name);
 
 const getItemSubResources = ({
   currencyId = null,
@@ -95,9 +95,7 @@ const getMaxCategory = async (filters) => {
   }
 
   const categoryFilter = filters.find((f) => f.id == "category");
-  if (!categoryFilter || categoryFilter.length === 0) {
-    return null;
-  }
+  if (!categoryFilter) return null;
 
   const allCategories = await Promise.all(
     categoryFilter.values?.reduce((acc, category) => {

@@ -1,7 +1,12 @@
 @import "../../styles/_variables.scss";
+@import "../../styles/_grid.scss";
 
 .layout {
-    display: flex;
-    justify-content: center;
-    margin: $md-margin 0 $md-margin 0;
+  display: flex;
+  justify-content: center;
+  margin: 82px 0 $md-margin 0;
+
+  .layout-children-wrapper {
+    @include ml-width(10);
+  }
 }

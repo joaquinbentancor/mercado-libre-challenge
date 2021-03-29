@@ -20,10 +20,10 @@ export const SearchBar = ({ onSearch }: SearchBarProps) => {
 
   return (
     <div className="nav">
-      <div className="logo-wrapper col-1">
+      <div className="logo-wrapper">
         <img src={logo} alt="" />
       </div>
-      <div className="col-9">
+      <div className="form-wrapper">
         <form className="form" onSubmit={onSubmitForm}>
           <input
             onChange={(evt) => setSearchSeed(evt.target.value)}
@@ -32,7 +32,7 @@ export const SearchBar = ({ onSearch }: SearchBarProps) => {
             placeholder="Nunca dejes de buscar"
           />
           <button className="search-button">
-            <img src={search} alt="" />
+            <img src={search} />
           </button>
         </form>
       </div>

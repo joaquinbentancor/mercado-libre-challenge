@@ -8,7 +8,7 @@ interface LayoutProps {
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="layout">
-      <div className="col-10">{children}</div>
+      <div className="layout-children-wrapper">{children}</div>
     </div>
   );
 };

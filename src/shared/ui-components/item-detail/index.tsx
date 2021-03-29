@@ -11,10 +11,10 @@ export const ItemDetail = ({ item }: ItemDetailProps) => {
     <div className="detail-wrapper">
       <div className="detail-card">
         <div style={{ display: "flex" }}>
-          <div className="result-image col-7">
+          <div className="result-image">
             <img src={item.picture} />
           </div>
-          <div className="col-5">
+          <div className="item-condition-resume">
             <div className="item-condition-wrapper">
               <span>{item.condition} - {item.sold_quantity} vendidos</span>
             </div>
@@ -35,7 +35,7 @@ export const ItemDetail = ({ item }: ItemDetailProps) => {
           <div className="item-description-title">
             <span>Descripción del producto</span>
           </div>
-          <div className="item-description-content col-7">
+          <div className="item-description-content">
             <p>{item.description}</p>
           </div>
         </div>

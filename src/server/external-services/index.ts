@@ -1,26 +1,26 @@
 import axiosClient from "../../shared/axios-config";
-import { MELI_API } from "../constants";
+import config from "../../../config";
 
 export namespace MercadoLibreAPI {
   export const fetchItems = (query) => {
-    return axiosClient.get(`${MELI_API}/sites/MLA/search?${query}`);
+    return axiosClient.get(`${config.api.endpoint}/sites/MLA/search?${query}`);
   };
-  
+
   export const fetchItem = (itemId: string) => {
-    return axiosClient.get(`${MELI_API}/items/${itemId}`);
+    return axiosClient.get(`${config.api.endpoint}/items/${itemId}`);
   };
-  
+
   export const fetchItemDescription = (itemId: string) => {
-    return axiosClient.get(`${MELI_API}/items/${itemId}/description`);
+    return axiosClient.get(
+      `${config.api.endpoint}/items/${itemId}/description`
+    );
   };
-  
+
   export const fetchCurrency = (currencyId: string) => {
-    return axiosClient.get(`${MELI_API}/currencies/${currencyId}`);
+    return axiosClient.get(`${config.api.endpoint}/currencies/${currencyId}`);
   };
-  
+
   export const fetchCategory = (categoryId: string) => {
-    return axiosClient.get(`${MELI_API}/categories/${categoryId}`);
+    return axiosClient.get(`${config.api.endpoint}/categories/${categoryId}`);
   };
 }
-
-
