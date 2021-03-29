@@ -4,19 +4,9 @@ import author from "../../helpers/author";
 export const getItems = async (query: string) => {
   const result: any = await MercadoLibreAPI.fetchItems(query);
 
-  const fullInformationItems = result.results
-    .slice(0, 4)
-    .map(async (result) => {
-      const [currency] = await getItemSubResources({
-        currencyId: result.currency_id,
-      });
-
-      return mapItem({ item: result, currency });
-    });
-
   const [maxCategory, ...items] = await Promise.all([
     getMaxCategory(result.available_filters),
-    ...fullInformationItems,
+    ...getItemsWithFullInformation(result.results),
   ]);
 
   return {
@@ -40,6 +30,16 @@ export const getItem = async (itemId: string) => {
     item: mapItem({ item, description, currency }),
     categories: mapCategory(category),
   };
+};
+
+const getItemsWithFullInformation = (results) => {
+  return results.slice(0, 4).map(async (result) => {
+    const [currency] = await getItemSubResources({
+      currencyId: result.currency_id,
+    });
+
+    return mapItem({ item: result, currency });
+  });
 };
 
 const mapItem = ({ item, description = null, currency = null }) => {
