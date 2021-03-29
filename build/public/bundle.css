@@ -181,6 +181,9 @@
     width: 16.66%;
   }
 }
+.nav .logo-wrapper img:hover {
+  cursor: pointer;
+}
 .nav .form-wrapper {
   width: 74.97%;
 }

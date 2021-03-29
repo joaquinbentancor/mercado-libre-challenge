@@ -6,6 +6,9 @@ export default () => {
   let history = useHistory();
 
   return (
-    <SearchBar onSearch={(seed) => history.push(`/items?search=${seed}`)} />
+    <SearchBar
+      onSearch={(seed) => history.push(`/items?search=${seed}`)}
+      onClickLogo={() => history.push("/")}
+    />
   );
 };

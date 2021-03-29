@@ -14,10 +14,16 @@ export const getItems = async (query: string) => {
       return mapItem({ item: result, currency });
     });
 
-  const items = await Promise.all(fullInformationItems);
-  const maxCategory = await getMaxCategory(result.filters);
+  const [maxCategory, ...items] = await Promise.all([
+    getMaxCategory(result.available_filters),
+    ...fullInformationItems,
+  ]);
 
-  return { author, items, categories: mapCategory(maxCategory) };
+  return {
+    author,
+    items,
+    categories: mapCategory(maxCategory),
+  };
 };
 
 export const getItem = async (itemId: string) => {
@@ -89,29 +95,22 @@ const getItemSubResources = ({
   return Promise.all(subResources);
 };
 
-const getMaxCategory = async (filters) => {
-  if (!Array.isArray(filters)) {
-    return null;
-  }
-
+const getMaxCategory = (filters) => {
+  if (!Array.isArray(filters)) return null;
   const categoryFilter = filters.find((f) => f.id == "category");
   if (!categoryFilter) return null;
 
-  const allCategories = await Promise.all(
-    categoryFilter.values?.reduce((acc, category) => {
-      acc.push(MercadoLibreAPI.fetchCategory(category.id));
-      return acc;
-    }, [])
+  const maxCategory: any = categoryFilter.values.reduce(
+    (max: any, category: any) => {
+      if (category.results > max.results) {
+        return category;
+      }
+      return max;
+    },
+    categoryFilter.values[0]
   );
 
-  const maxCategory: any = allCategories.reduce((max: any, category: any) => {
-    if (
-      category.total_items_in_this_category > max.total_items_in_this_category
-    ) {
-      return category;
-    }
-    return max;
-  }, allCategories[0]);
-
-  return maxCategory;
+  return maxCategory
+    ? MercadoLibreAPI.fetchCategory(maxCategory.id)
+    : Promise.resolve();
 };

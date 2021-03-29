@@ -5,9 +5,10 @@ import "./style.scss";
 
 interface SearchBarProps {
   onSearch: (seed: string) => void;
+  onClickLogo: () => void;
 }
 
-export const SearchBar = ({ onSearch }: SearchBarProps) => {
+export const SearchBar = ({ onSearch, onClickLogo }: SearchBarProps) => {
   const [searchSeed, setSearchSeed] = useState(null);
 
   const onSubmitForm = (evt) => {
@@ -21,7 +22,7 @@ export const SearchBar = ({ onSearch }: SearchBarProps) => {
   return (
     <div className="nav">
       <div className="logo-wrapper">
-        <img src={logo} alt="" />
+        <img src={logo} alt="" onClick={onClickLogo} />
       </div>
       <div className="form-wrapper">
         <form className="form" onSubmit={onSubmitForm}>
