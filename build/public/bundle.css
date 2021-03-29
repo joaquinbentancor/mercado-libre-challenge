@@ -222,6 +222,9 @@
 .nav .form-wrapper .form .search-button:hover {
   cursor: pointer;
 }
+.nav .form-wrapper .form .search-button:focus {
+  outline: none;
+}
 body {
   margin: 0;
   background-color: #EEEEEE;

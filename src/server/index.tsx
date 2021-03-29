@@ -13,6 +13,7 @@ const port = 3000;
 app.use(express.static("build/public"));
 app.use(express.json());
 app.use(resources);
+app.use((err, res, req, next) => next(err));
 
 app.get("*", async (req, res) => {
   const activeRoute = routes.find((route) => matchPath(req.path, route));
